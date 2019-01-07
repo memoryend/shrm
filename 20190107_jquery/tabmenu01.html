@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="ko">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>tabmenu</title>
+	<link rel="stylesheet" href="../css/reset.css">
+	<style>
+		.container{width: 500px; margin: 50px auto;}
+		ul.tab{}
+		ul.tab:after{content:""; display: block; clear: both;}
+		ul.tab li{float: left; height: 40px; background: #e9eff8; width: 100px; -ms-border-radius: 10px 10px 0 0;
+		border-radius: 10px 10px 0 0;}
+		ul.tab li a{display: block; line-height: 40px; text-align: center;}
+		ul.tab li.selected{background-color: #c1d2f2;}
+		.container div{border: 1px solid #9fb7d4; border-top: none; padding: 10px;}
+	</style>
+	<script src="../js/jquery-3.3.1.min.js"></script>
+	<script>
+		$(document).ready(function(){
+			$("ul.tab li").eq(0).addClass("selected");
+			$(".container div").hide();
+			$(".container div").eq(0).show();
+			$("ul.tab li").click(function(){
+				$("ul.tab li").removeClass();
+				$(this).addClass("selected");
+				$(".container div").hide();
+				$(".container div").eq($(this).index()).show(); //this 그 선택된 대상의 인덱스 값
+				
+				/*
+				var t = $(this);
+				var $i = t.index();
+
+				$("ul.tab li").removeClass();
+				t.addClass("selected");
+				$(".container div").hide();
+				//$(".container div").eq($(this).index()).show(); //this 그 선택된 대상의 인덱스 값
+				$(".container div").eq(i).show();
+				*/
+			});
+		});
+	</script>
+ </head>
+ <body>
+  <div class="container">
+		<ul class="tab">
+			<li><a href="#">menu1</a></li>
+			<li><a href="#">menu2</a></li>
+			<li><a href="#">menu3</a></li>
+			<li><a href="#">menu4</a></li>
+			<li><a href="#">menu5</a></li>
+		</ul>
+		<div>1.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sit, necessitatibus dolore at aliquid pariatur sed! Excepturi esse quae facere ipsam.</div>
+		<div>2.Dicta, consequatur, ea harum officia odit tempora aliquam debitis beatae quia voluptate ullam commodi quos iusto distinctio molestias rem inventore?</div>
+		<div>3.Suscipit, tempore inventore tempora rem tenetur ad unde aperiam ex minus animi quis itaque eos eum quos saepe. Neque, illo!</div>
+		<div>4.Iure, ullam, quasi, cupiditate atque modi ipsa molestias magnam culpa nisi animi aliquam ab fuga odio soluta quas odit ex!</div>
+		<div>5.Dolor, fuga, in, cupiditate aut eius quasi deserunt beatae mollitia accusamus odio veritatis perferendis nisi deleniti molestias totam similique quo!</div>
+	</div>
+ </body>
+</html>
