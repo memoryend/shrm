@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="ko">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>attribute</title>
+	<style>
+		img{width: 300px; height: 300px;}
+	</style>
+	<script src="../js/jquery-3.3.1.min.js"></script>
+	<script>
+		$(document).ready(function(){
+			//attribute 세팅하기
+			/*
+			$("#btn").click(function(){
+				$(".header img").attr("src","../images/fish1.png");
+			});*/
+			
+			$(".header img").hover(function(){
+				$(this).attr("src","../images/fish1.png");
+			},function(){
+				$(this).attr("src","images/testimg.jpg");
+			});//hover 되었을 때 앞에 function, hover 다시 되돌릴대 뒤에 function
+
+		});
+	</script>
+ </head>
+ <body>
+		<button id="btn">button</button>
+		<div class="header">
+			<img src="images/testimg.jpg" alt="이미지" class="target" id="target">
+			<a href="http://www.naver.com" target="_blank" class="image"></a>
+		</div>
+ </body>
+</html>
