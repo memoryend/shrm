@@ -39,12 +39,15 @@
 			$("ul.menu li")[0].style.border="4px solid #f00";
 			자바스크립트 값을 .get이나 []이 가져온다
 			*/
-
+				
 				$("ul.menu li").each(function(index){
 					//console.log("index = " + index);
 					//console.log(this);
 					//$(this).css("border", "4px solid #f00");
 					$("ul.menu li").eq(index).css("border", "4px solid #f00"); //$this = $("ul.menu li").eq(index);
+				});
+				$("div").each(function(index){
+					$(this).css("color","#00f");
 				});
 			});
 	</script>
