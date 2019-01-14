@@ -28,59 +28,16 @@
 	<script src="../js/jquery-3.3.1.min.js"></script>
 	<script>
 		$(document).ready(function(){
-			
-			var $menu = $(".menu-container");
-			var $menuPos = $menu.offset().top;
-			var $car1 = $("#img01");
-			var $carPos = $car1.offset().top;
-			var $car2 = $("#img02");
-			var $carPos2 = $car2.offset().top;
-			$car1.css({opacity:0});
-			$car2.css({opacity:0});
-
-			//$("#btn").hide();
-			$("#btn").css("opacity:0",0);
-
-			$(window).on("scroll", function(){
-					var scrollY = window.pageYOffset;
-					//var scrollY = $("html,body").scrollTop(); //위에 것과 동일
-					console.log(scrollY);
-					if (scrollY > $menuPos){
-						$(".menu-container ul").addClass("fixed");
-					}else{
-						$(".menu-container ul").removeClass("fixed");
-					}
-
-					if (scrollY > 900){
-						//$("#btn").show();
-						//$("#btn").fadeIn();
-						$("#btn").css("opacity",1);
-					}else{
-						//$("#btn").hide();
-						//$("#btn").fadeOut();
-						$("#btn").css("opacity",0);
-					}
-
-					if (scrollY > $carPos - 500){
-						//$car1.stop().animate({left:500,opacity:1});
-						$car1.css({left:300,opacity:1});
-
-					}else{
-						//$car1.stop().animate({left:0,opacity:0});
-						$car1.css({left:0,opacity:0});
-					}
-					if (scrollY > $carPos - 500){
-						$car2.css({right:300,opacity:1});
-
-					}else{
-						$car2.css({right:0,opacity:0});
-					}
-				});
-						$("#btn").click(function(){
-							$("html,body").animate({scrollTop:0},500);
-					});
-
+			var $menuPos = $(".menu-container").offset().top;
+			$(window).on("scroll",function(){
+				var scrollY = window.pageYOffset;
+				if (scrollY > $menuPos){
+					$(".menu-container ul").addClass("fixed");
+				}else{
+					$(".menu-container ul").removeClass("fixed");
+				}
 			});
+		});
 	</script>
  </head>
  <body>
