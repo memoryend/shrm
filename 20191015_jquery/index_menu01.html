@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="ko">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>menu</title>
+	<link rel="stylesheet" href="../css/reset.css">
+	<style>
+		#menu{width: 700px; margin: 0 auto; position: relative;}
+		#menu > ul{width: 100%; height: 40px;}
+		#menu > ul:after{content:""; clear: both; display: block;}
+		#menu > ul > li{float: left; width: 20%;border-right: 1px solid #dfdfdf;}
+		#menu > ul > li > a{display: block; line-height: 40px; text-align: center;}
+		#menu > ul > li:last-child{border-right: none;}
+		#menu > ul > li:hover{background-color: #eee;}
+		/*#menu > ul > li:hover ul.sub{background-color: #eee; opacity: 1;}*/
+
+		ul.sub{width: 100%; position: absolute; background-color: #fff; left: 0;}
+		ul.sub > li:after{content:"";display: block;clear: both;}
+		ul.sub > li{float: left;}
+		ul.sub > li > a{display: block; text-align: center; padding: 5px 10px;}
+
+		.container{width: 100%; height: 300px; background: #f00;}
+
+	</style>
+	<script src="../js/jquery-3.3.1.min.js"></script>
+	<script>
+		$(document).ready(function(){
+			//css
+			/*
+			$("ul.sub").css("display","none");
+			$("#menu>ul>li").mouseover(function(){
+			//$("#menu>ul>li").mouseover();
+			//$("#menu>ul>li").mouseout();
+				var i = $(this).index();
+				$("#menu>ul>li:eq("+i+") ul").css("display","block");
+				//$("#menu>ul>li>ul").eq(i).css("display","block");
+			}).mouseout(function(){
+				$("ul.sub").css("display","none");
+			});
+			*/
+			/*
+			//show(), hide()
+			$("ul.sub").hide();
+			$("#menu>ul>li").mouseenter(function(){
+				var i = $(this).index();
+				$("#menu>ul>li>ul").eq(i).stop().show(300);
+			}).mouseleave(function(){
+				$("ul.sub").stop().hide(300);
+			
+			});
+			*/
+			/*
+			//slideDown(), slideUp()
+			$("ul.sub").hide();
+			$("#menu>ul>li").mouseenter(function(){
+				var i = $(this).index();
+				$("#menu>ul>li>ul").eq(i).stop().slideDown();
+			}).mouseleave(function(){
+				$("ul.sub").stop().slideUp();
+			});
+			*/
+			//hover()
+			$("ul.sub").hide();
+			$("#menu>ul>li").hover(function(){
+				var i = $(this).index();
+				$("#menu>ul>li>ul").eq(i).stop().slideDown();
+			},function(){
+				$("ul.sub").stop().slideUp();
+			});
+			/*
+			//전체메뉴
+			$("ul.sub").hide();
+			$("#menu>ul").hover(function(){
+				$("ul.sub").stop().slideDown();
+			},function(){
+				$("ul.sub").stop().slideUp();
+			});
+			*/
+		});
+	</script>
+ </head>
+ <body>
+		<div id="menu">
+			<ul>
+				<li>
+					<a href="#">menu1</a>
+					<ul class="sub">
+						<li><a href="#">smenu1</a></li>
+						<li><a href="#">smenu2</a></li>
+						<li><a href="#">smenu3</a></li>
+						<li><a href="#">smenu4</a></li>
+						<li><a href="#">smenu5</a></li>
+					</ul>
+				</li>
+				<li>
+					<a href="#">menu2</a>
+					<ul class="sub" style="padding-left:50px">
+						<li><a href="#">smenu1</a></li>
+						<li><a href="#">smenu2</a></li>
+						<li><a href="#">smenu3</a></li>
+						<li><a href="#">smenu4</a></li>
+						<li><a href="#">smenu5</a></li>
+					</ul>
+				</li>
+				<li>
+					<a href="#">menu3</a>
+					<ul class="sub" style="padding-left:100px">
+						<li><a href="#">smenu1</a></li>
+						<li><a href="#">smenu2</a></li>
+						<li><a href="#">smenu3</a></li>
+						<li><a href="#">smenu4</a></li>
+						<li><a href="#">smenu5</a></li>
+					</ul>
+				</li>
+				<li>
+					<a href="#">menu4</a>
+					<ul class="sub" style="padding-left:300px">
+						<li><a href="#">smenu1</a></li>
+						<li><a href="#">smenu2</a></li>
+						<li><a href="#">smenu3</a></li>
+						<li><a href="#">smenu4</a></li>
+						<li><a href="#">smenu5</a></li>
+					</ul>
+				</li>
+				<li>
+					<a href="#">menu5</a>
+					<ul class="sub" style="padding-left:300px">
+						<li><a href="#">smenu1</a></li>
+						<li><a href="#">smenu2</a></li>
+						<li><a href="#">smenu3</a></li>
+						<li><a href="#">smenu4</a></li>
+						<li><a href="#">smenu5</a></li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+		<div class="container">
+		</div>
+ </body>
+</html>
