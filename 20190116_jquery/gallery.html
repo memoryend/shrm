@@ -29,39 +29,56 @@
 	<script>
 		$(document).ready(function(){
 			var current = 0;
-			var $thumbnail = $("#thumbnail");
-			var $container = $thumbnail.find(".container > ul");
-			var $thumb = $container.find(".thumb");
-			var $image = $("#gallery #image > p");
+			var $thembnail = $("#thumbnail");
 			var $prev = $thumbnail.find(".left");
 			var $next = $thumbnail.find(".right");
 
-			var $containerWidth = $thumbnail.find(".container").width();
-
 			$next.on("click", function(){
-				if(current < 2){current++;}else{current = 0};
-				console.log(current);
-				listMove();
+				if (current < 2) {current++}
+					listMove();
 			});
 
 			$prev.on("click", function(){
-				if(current > 0){current--;}else{current = 2};
-				console.log(current);
-				listMove();
+				if (current > 0) {current--}
+					listMove();
 			});
-			
-			function listMove(){
-				var tl = $containerWidth * current * -1;
-				//$container.css("left", tl);
-				$container.stop().animate({left:tl});
-			};
-			
-			$thumb.on("click", function(){
-				$image.css("display", "none");
-				var i = $(this).index();
-				$image.eq(i).css("display", "block");
-			});
+
 		});
+		// $(document).ready(function(){
+		// 	var current = 0;
+		// 	var $thumbnail = $("#thumbnail");
+		// 	var $container = $thumbnail.find(".container > ul");
+		// 	var $thumb = $container.find(".thumb");
+		// 	var $image = $("#gallery #image > p");
+		// 	var $prev = $thumbnail.find(".left");
+		// 	var $next = $thumbnail.find(".right");
+
+		// 	var $containerWidth = $thumbnail.find(".container").width();
+
+		// 	$next.on("click", function(){
+		// 		if(current < 2){current++;}else{current = 0};
+		// 		console.log(current);
+		// 		listMove();
+		// 	});
+
+		// 	$prev.on("click", function(){
+		// 		if(current > 0){current--;}else{current = 2};
+		// 		console.log(current);
+		// 		listMove();
+		// 	});
+			
+		// 	function listMove(){
+		// 		var tl = $containerWidth * current * -1;
+		// 		//$container.css("left", tl);
+		// 		$container.stop().animate({left:tl});
+		// 	};
+			
+		// 	$thumb.on("click", function(){
+		// 		$image.css("display", "none");
+		// 		var i = $(this).index();
+		// 		$image.eq(i).css("display", "block");
+		// 	});
+		// });
 	</script>
  </head>
  <body>
