@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>parallax</title>
+	<link rel="stylesheet" href="../css/reset.css">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+	<style>
+		.scene{height: 100vh; background-size: cover; background-attachment:fixed;}
+		.scene.one{background-image: url(../images/pc01.jpg);}
+		.scene.two{background-image: url(../images/pc02.jpg);}
+		.scene.three{background-image: url(../images/pc03.jpg);}
+		.scene header{max-width:80%; color:white;position: relative; left: 50%; top:50%; transform:translate(-50%, -50%); text-align: center; font-size: 1.5rem;}
+		.scene header h1{margin-bottom: 1rem;}
+		.scene header h1:after{content:"";border-bottom: 1px solid white; width: 8rem; display: block; margin: 0 auto; margin-top: 1rem;}
+	</style>
+</head>
+<body>
+	<section class="scene one">
+		<header>
+			<h1>Lorem ipsum dolor sit amet.</h1>
+			Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum, accusamus!
+			<i class="fab fa-amazon-pay"></i>
+		</header>
+	</section>
+	<section class="scene two">
+		<header>
+			<h1>Est architecto eos repudiandae odio.</h1>
+			Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum, accusamus!
+		</header>
+	</section>
+	<section class="scene three">
+		<header>
+			<h1>Natus quam est odit quos.</h1>
+			Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum, accusamus!
+		</header>
+	</section>
+</body>
+</html>
