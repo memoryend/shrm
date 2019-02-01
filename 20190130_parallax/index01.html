@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>parallax</title>
+	<link rel="stylesheet" href="../css/reset.css">
+	<style>
+		.sky{background: url(../images/bg1.png) 50% 0; width: 100%; height: 500px; position: relative;}
+		.sky article{position: absolute; top: 150px; left: 40%;}
+	</style>
+	<script src="../js/jquery-3.3.1.min.js"></script>
+	<script>
+		$(function(){
+			$('section[data-type="background"]').each(function(){
+				var bg = $(this) //'section[data-type="background" 이게 this
+				$(window).scroll(function(){
+					var yPos = - ($(window).scrollTop() / bg.data("speed"));
+					console.log("scroll:" +$(window).scrollTop() +" / bg" + yPos);
+					var coords='50%' + yPos +'px';
+					bg.css({backgroundPosition:coords});
+				});
+			});
+		});
+	</script>
+</head>
+<body>
+		<section class="sky" data-type="background" data-speed="-1">
+			<article><img src="../images/balloon.png" alt=""></article>
+			
+		</section>
+	Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum praesentium reprehenderit iusto explicabo magnam voluptates dicta, animi odit, itaque vitae rerum, eveniet quo quasi, veniam quia vero autem assumenda deleniti. Labore voluptate quasi sed doloremque voluptatem hic incidunt, voluptas assumenda aut a, animi, eos dolorum? Accusamus amet, corporis! Temporibus perspiciatis quas suscipit, accusantium ut dolores ad culpa voluptate sed unde obcaecati libero, nihil quae dicta nisi cum sapiente eum facilis nesciunt, rerum possimus doloremque vel nobis vero. Est vel omnis atque maxime animi eligendi ex temporibus laudantium repellendus quas assumenda eius accusantium velit quam fugiat saepe autem eos, ratione amet, explicabo ipsam cupiditate pariatur deserunt dolorem accusamus! Perferendis sequi ipsa dolore rem? Unde quasi ratione facilis nihil illo ipsum fugiat minima ipsa sed alias beatae voluptatum reiciendis vero aut vel accusamus repellat mollitia iure eligendi voluptate itaque, iste vitae, maiores architecto velit. Quis iusto delectus, facere excepturi nam repudiandae perspiciatis iste odit sunt odio voluptas cupiditate dolore possimus ad modi ducimus nostrum id porro deleniti eum! Voluptatibus animi, placeat tempora, eos illum adipisci numquam dicta reprehenderit explicabo nobis iure eum natus perferendis molestiae totam accusantium sunt corporis. Quibusdam ullam minima accusamus ipsa, quae sint, numquam odit quis fugit tempora laborum.
+		<section class="sky" data-type="background" data-speed="0.5">
+			<article><img src="../images/balloon.png" alt=""></article>
+			
+		</section>
+</body>
+</html>
